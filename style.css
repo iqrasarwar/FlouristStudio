@@ -1,0 +1,111 @@
+body,html
+{
+   padding: 0;
+   margin: 0;
+}
+.header{
+   height: 100vh;
+   background-image: url('images/nav-bg1.jpg');
+}
+.header
+{
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-blend-mode: darken;
+}
+.head-title,.head-flex{
+   color: rgb(235, 15, 15);
+}
+
+.head-title-heading{
+   font-weight: 700;
+   font-size: 50px;
+   line-height: 65px;
+}
+.head-title-button{
+   color: white;
+   background-color: rgb(235, 15, 15);
+   border: none;
+   padding: 2% 5%;
+   margin-top: 3%;
+   max-width: 45%;
+}
+.head-flex{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: flex-end;
+   padding-top: 5%;
+}
+.head-flex div{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   max-width: 60%;
+   padding-left: 15%;
+}
+.navbar{
+   width: 100%;
+   padding: 0%;
+}
+.nav-layout
+{
+   display: flex;
+   flex-direction: column;
+   min-width: 100%;
+}
+.nav-bar-logo{
+   width: 110px;
+   height: 106px;
+   left: 15%;
+   position: absolute;
+   top: 0%;
+   border-block: 2px solid red;
+}
+
+.connect-icons .nav-link{
+   color: rgb(255, 255, 255) !important;
+   padding: 2.1% 0%;
+}
+.navbar-menu .nav-link{
+   color: black !important;
+}
+.active
+{
+border-bottom: 2px solid rgb(255, 0, 0);
+}
+.navbar-menu{
+   background-color: rgba(75, 70, 70, 0.3);
+   min-width: 100%;
+   justify-content: flex-end;
+   align-items: center;
+   padding: 0% 15%;
+   padding-top: 1.8%;
+}
+.nav-item{
+   margin-right: 5px;
+}
+.contact-flex,.contact-sub-flex{
+   display: flex;
+   flex-direction: row;
+}
+.contact-flex {
+   background-color: black;
+   min-width: 100%;
+   justify-content: space-between;
+   padding: 0% 15%;
+   padding-left: 24%;
+   min-height: 40px;
+   align-items: center;
+}
+.contact-red{
+   color: rgb(255, 0, 0);
+   padding-right: 15px;
+}
+.fa-twitter
+{
+   color: rgb(255, 0, 0);
+}
+.contactNum .nav-link{
+   color: white !important;
+}
