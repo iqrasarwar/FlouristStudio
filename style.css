@@ -117,7 +117,7 @@ border-bottom: 2px solid rgb(255, 0, 0);
    justify-content: space-between;
    padding: 0.25rem;
 }
-.products h1,.testimonials h1{
+.products h1,.testimonials h2{
    color: red;
    text-align: center;
    margin: auto;
@@ -133,11 +133,13 @@ justify-content: center;
 .product-btn{
    margin: auto;
    padding: 1% 3%;
+   margin-block: 3%;
    border-radius: 5px;
 }
 .testimonials
 {
    margin-top: 3%;
+   padding-bottom: 5%;
    background-color: gainsboro;
 }
 .testimonials .card{
@@ -151,10 +153,67 @@ justify-content: center;
 }
 .testimonials .card-body{
    border: none;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: rgb(241, 202, 202);
 }
 .test-profile{
    width: 35%;
    height: 35% !important;
    border: 1px solid red;
    border-radius: 50%;
+}
+.testimonials .card-text{
+border: 1px solid red;
+max-width: 250px;
+box-shadow: rgba(255, 0, 0, 0.35) 0px 5px 15px;
+padding: 3%;
+padding-top: 7%;
+margin: auto;
+}
+.test-profile{
+   margin-bottom: -20% !important;
+   z-index: 1;
+   margin: auto;
+}
+.red-qoute{
+   color: red;
+}
+.newsLetter div{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+.news-head p{
+   max-width: 40%;
+}
+.news-head{
+   padding-block: 5%;
+   background-color: gainsboro;
+   padding-bottom: 10%;
+}
+.new-letter img{
+   width: 65%;
+   margin-top: -20%;
+   border-radius: 3%;
+   box-shadow: rgba(255, 0, 0, 0.35) 0px 5px 15px;
+}
+.newsLetter h2{
+   color: red;
+}
+.flex-col-newslettter
+{
+   margin-block: 10%;
+}
+.subscribe-news{
+background-color: red;
+}
+.form-control{
+   max-width: 70%;
+   display: inline-flex;
+}
+.subscribe-news
+{
+   margin-top: -0.9%;
 }
