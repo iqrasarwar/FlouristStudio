@@ -11,21 +11,11 @@ namespace FlouristStudio.Controllers3
         {
             return View();
         }
-        private static List<ValidationResult> ValidateModel(object model)
-        {
-            var validationResults = new List<ValidationResult>();
-            var ctx = new ValidationContext(model, null, null);
-            Validator.TryValidateObject(model, ctx, validationResults, true);
-            return validationResults;
-        }
         [HttpPost]
         public IActionResult SignUp(SignUp s)
         {
-            //string Name,string UserName,string Email,string Password,string ConfirmPassword
-            //SignUp s = new(Name, UserName, Email, Password,ConfirmPassword);
-            //var res = ValidateModel(s);
-           // var uniqueUser = DataBase.UniqueUser(s);
-            if (ModelState.IsValid )//&& res.Count <= 0 && uniqueUser)
+            var uniqueUser = DataBase.UniqueUser(s);
+            if (ModelState.IsValid && uniqueUser)
             {
                 DataBase.RegisterNewUser(s);
                 ModelState.Clear();
@@ -33,9 +23,8 @@ namespace FlouristStudio.Controllers3
             }
             else
             {
-                /*foreach (ValidationResult result in res)
-                    if (result.ToString() == "Password and Confirm Password do not match")
-                        ModelState.AddModelError(string.Empty, result.ToString());*/
+                if(!uniqueUser)
+                ModelState.AddModelError(string.Empty, "UserName is already Taken!");
                 return View("SignUpError");
             }
         }

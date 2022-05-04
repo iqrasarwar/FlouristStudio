@@ -17,22 +17,22 @@ namespace FlouristStudio.Models
             ConfirmPassword = confrimPass;
         }
 
-        [Required(ErrorMessage = "Enter Your Name")]
+        [Required(ErrorMessage = "Name is required.")]
         [StringLength(50)]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "Enter Your Name")]
+        [Required(ErrorMessage = "User Name is required.")]
         [StringLength(50)]
         public string? UserName { get; set; }
 
-        [Required(ErrorMessage = "Enter Email")]
+        [Required(ErrorMessage = "Email is required.")]
         public string? Email { get; set; }
 
-        [Required(ErrorMessage = "Enter Password")]
+        [Required(ErrorMessage = "Password is required.")]
         [DataType(DataType.Password)]
         public string? Password { get; set; }
 
-        [Required(ErrorMessage = "Confirm Password")]
+        [Required(ErrorMessage = "Confirm Password is required.")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Password and Confirm Password do not match")]
         public string? ConfirmPassword { get; set; }
