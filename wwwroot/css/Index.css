@@ -1,0 +1,246 @@
+﻿body, html {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 100vh;
+    background-image: url('images/nav-bg1.jpg');
+}
+
+.header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.head-title, .head-flex {
+    color: rgb(235, 15, 15);
+}
+
+.head-title-heading {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65px;
+}
+
+.head-title-button {
+    color: white;
+    background-color: rgb(235, 15, 15);
+    border: none;
+    border-radius: 7px;
+    padding: 2% 5%;
+    margin-top: 3%;
+    max-width: 45%;
+}
+
+.head-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 5%;
+}
+
+    .head-flex div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 60%;
+        padding-left: 15%;
+    }
+
+.navbar {
+    width: 100%;
+    padding: 0%;
+}
+
+.nav-layout {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+.nav-bar-logo {
+    width: 110px;
+    height: 106px;
+    left: 15%;
+    position: absolute;
+    top: 0%;
+    border-block: 2px solid red;
+}
+
+.connect-icons .nav-link {
+    color: rgb(255, 255, 255) !important;
+    padding: 2.1% 0%;
+}
+
+.navbar-menu .nav-link {
+    color: black !important;
+}
+
+.navbar-menu .active {
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
+.navbar-menu {
+    background-color: rgba(75, 70, 70, 0.3);
+    min-width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0% 15%;
+    padding-top: 1.8%;
+}
+
+.nav-item {
+    margin-right: 5px;
+}
+
+.connect-icons {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.contact-flex {
+    background-color: black;
+    min-width: 100%;
+    justify-content: flex-end;
+    padding: 0% 15%;
+    padding-left: 24%;
+    min-height: 40px;
+    align-items: center;
+}
+
+.card-img-top {
+    height: 350px;
+}
+
+.card {
+    border: 1px solid red;
+    margin: 1% auto;
+}
+
+.card-body {
+    border-top: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.25rem;
+}
+
+.products h1, .testimonials h2 {
+    color: red;
+    text-align: center;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-btn {
+    margin: auto;
+    padding: 1% 3%;
+    margin-block: 3%;
+    border-radius: 5px;
+}
+
+.testimonials {
+    margin-top: 3%;
+    padding-bottom: 5%;
+    background-color: gainsboro;
+}
+
+    .testimonials .card {
+        flex-direction: row !important;
+        width: 70%;
+        border: none;
+    }
+
+        .testimonials .card img {
+            max-width: 50%;
+            height: 500px;
+        }
+
+    .testimonials .card-body {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(241, 202, 202);
+    }
+
+.test-profile {
+    width: 35%;
+    height: 35% !important;
+    border: 1px solid red;
+    border-radius: 50%;
+}
+
+.testimonials .card-text {
+    border: 1px solid red;
+    max-width: 250px;
+    box-shadow: rgba(255, 0, 0, 0.35) 0px 5px 15px;
+    padding: 3%;
+    padding-top: 7%;
+    margin: auto;
+}
+
+.test-profile {
+    margin-bottom: -20% !important;
+    z-index: 1;
+    margin: auto;
+}
+
+.red-qoute {
+    color: red;
+}
+
+.newsLetter div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.news-head p {
+    max-width: 40%;
+}
+
+.news-head {
+    padding-block: 5%;
+    background-color: gainsboro;
+    padding-bottom: 10%;
+}
+
+.new-letter img {
+    width: 65%;
+    margin-top: -20%;
+    border-radius: 3%;
+    box-shadow: rgba(255, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.newsLetter h2 {
+    color: red;
+}
+
+.flex-col-newslettter {
+    margin-block: 10%;
+}
+
+.subscribe-news {
+    background-color: red;
+}
+
+.form-control {
+    max-width: 70%;
+    display: inline-flex;
+}
+
+.subscribe-news {
+    margin-top: -0.9%;
+}
