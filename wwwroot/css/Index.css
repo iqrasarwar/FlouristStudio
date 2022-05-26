@@ -94,6 +94,7 @@
 
 .nav-item {
     margin-right: 5px;
+    color: black;
 }
 
 .connect-icons {
@@ -243,4 +244,17 @@
 
 .subscribe-news {
     margin-top: -0.9%;
+}
+
+.cc {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding-block:10px;
+}
+.prd_link{
+    color:white;
+}
+.prd_link:hover {
+    color: white;
 }
