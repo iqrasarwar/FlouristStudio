@@ -4,11 +4,11 @@ namespace FlouristStudio.Models
 {
     public class SignIn
     {
-        [Required(ErrorMessage = "Enter Your Name")]
+        [Required(ErrorMessage = "Please enter Your Name")]
         [StringLength(50)]
         public string? UserName { get; set; }
 
-        [Required(ErrorMessage = "Enter Password")]
+        [Required(ErrorMessage = "Please enter Password")]
         [DataType(DataType.Password)]
         public string? Password { get; set; }
 
@@ -16,6 +16,9 @@ namespace FlouristStudio.Models
         {
             this.UserName = userName;
             this.Password = password;
+        }
+        public SignIn()
+        {
         }
     }
 }

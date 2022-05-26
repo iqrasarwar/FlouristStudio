@@ -29,9 +29,8 @@ namespace FlouristStudio.Controllers3
             }
         }
         [HttpPost]
-        public IActionResult SignIn(string UserName, string Password)
+        public IActionResult SignIn(SignIn user)
         {
-            SignIn user = new(UserName, Password);
             if(ModelState.IsValid)
             {
                 if (DataBase.VerifyUser(user))

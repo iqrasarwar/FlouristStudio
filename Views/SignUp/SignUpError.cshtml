@@ -3,10 +3,9 @@
 @{
     ViewBag.Title = "SignUp/In";
 }
-<head>
-    <link rel="stylesheet" href="~/css/SignUp.css" asp-append-version="true" />
-   
-</head>
+@section link{
+     <link rel="stylesheet" href="~/css/SignUp.css" asp-append-version="true" />
+}
    <div class="container-signup right-panel-active" id="container-signup">
       <div class="form-container sign-up-container">
          <form method="post" action="/SignUp/SignUp">

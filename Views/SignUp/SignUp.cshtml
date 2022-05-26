@@ -3,10 +3,15 @@
 @{
     ViewBag.Title = "SignUp/In";
 }
-<head>
-    <link rel="stylesheet" href="~/css/SignUp.css" asp-append-version="true" />
-   
-</head>
+    @section link{
+        <script src="https://kit.fontawesome.com/f9832912b1.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="~/css/SignUp.css" asp-append-version="true" />
+   <style>
+       #signup--head{
+           background-color:white;
+       }
+   </style>
+    }
    <div class="container-signup" id="container-signup">
       <div class="form-container sign-up-container">
          <form method="post" action="/SignUp/SignUp">
@@ -53,12 +58,14 @@
                <p>We are dedicated to provide you the flowers with rich and varied colors, profusion of bloom, velvety petal textures and, a rich sweet scent on your doorstep.Choose your favourite from our range of beautiful & gorgeous fresh flower bouquets, floral box, vase arrangements, gift baskets and chocolates. Sign up now to send all these to your loved ones from anywhere in the world.</p>
                <p>Already Have an Account?</p>
                <button class="ghost inp-btn-custom" id="signIn">Sign In</button>
+               <partial name ="Header"  />
             </div>
             <div class="overlay-panel overlay-right">
                <h1>Welcome Back!</h1>
                <p>We are dedicated to provide you the flowers with rich and varied colors, profusion of bloom, velvety petal textures and, a rich sweet scent on your doorstep.Choose your favourite from our range of beautiful & gorgeous fresh flower bouquets, floral box, vase arrangements, gift baskets and chocolates. Sign up now to send all these to your loved ones from anywhere in the world.</p>
                <p>New to Florist Studio?</p>
                <button class="ghost inp-btn-custom" id="signUp">Sign Up</button>
+               <partial name ="Header"  />
             </div>
          </div>
       </div>
@@ -76,31 +83,3 @@
         container.classList.remove("right-panel-active");
     });
    </script>
-   <!-- <h3> Add A New Student</h3>
-
-   <form method="post" action="/Student/StudentForm">
-
-       <div asp-validation-summary="ModelOnly"></div>
-       <div>
-           <label asp-for="Name"></label><br>
-           <input asp-for="Name"><br>
-           <span asp-validation-for="Name"></span>
-       </div>
-       <div>
-           <label asp-for="Age"></label><br>
-           <input asp-for="Age"><br>
-           <span asp-validation-for="Age"></span>
-       </div>
-       <div>
-           <label asp-for="CGPA"></label><br>
-           <input asp-for="CGPA"><br>
-           <span asp-validation-for="CGPA"></span>
-       </div>
-       <div>
-           <label asp-for="Semester"></label><br>
-           <input asp-for="Semester"><br>
-           <span asp-validation-for="Semester"></span>
-       </div>
-       <input type="submit" value="Save Student" id="button" />
-
-   </form> -->
