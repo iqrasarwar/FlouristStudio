@@ -8,47 +8,75 @@
    <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
    <style>
-   .head
+       .chckout1{
+           display:flex;
+           flex-direction:row;
+           justify-content:center;
+           align-items:center;
+       }
+   .crtt
    {
-      color: red;
+      text-align:center;
    }
-   .title,.content,.mount,.prdct-detil,.link-container{
-      display: flex;
-      flex-direction: row;
-      align-items:center;
-      justify-content: space-evenly;
+   .crtt h1{
+       padding-top:50px;
    }
-   .sub-title{
-      display: flex;
-      flex-direction: column;
+   th{
+       color:red;
    }
    .chckout{
-      border: red 3px inset;
-      display: flex;
-      flex-direction: column;
       max-width:30%;
       margin:auto;
-      align-items:center;
+       padding:10px;
+       border-radius:5px;
+    box-shadow: rgba(255, 0, 0, 0.35) 0px 5px 15px;
+   }
+   .chckout1{
+       margin-bottom:30px;
+   }
+   .chckout:hover{
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      animation-name: example;
+      animation-duration: 0.25s;
+      border-left: 8px solid red;
+   }
+   .chckout h4{
+       display:flex;
+       flex-direction:row;
+       justify-content:space-between;
+       margin-top:10px;
    }
    .crtt{
-       padding-top:5%;
+       display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items:center;
    }
    .amount-btn{
        background-color:white;
        border:none
    }
-   .remove-btn{
-       color:red;
+   .remove-btn,.fa-plus,.fa-minus
+   {
        border:none;
        background-color:white;
+       margin:5px;
    }
-   .link-btn,.clear-btn{
+   .fa-minus{
+       color:red;
+   }
+   .fa-plus{
+       color:green;
+   }
+   .link-btn{
        color:white;
        background-color:red;
        border:none;
        border-radius:10px;
        padding:10px;
        margin-block:5px;
+       width:200px;
    }
    .crt-img{
        width:100px;
@@ -56,90 +84,140 @@
        border-radius:10px;
        padding-right:5px;
    }
+   .mount1
+   {
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:center;
+   }
+   .link-container{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-evenly;
+        align-items:center;
+        margin-block:20px;
+   }
+   .link-btn:hover
+   {
+       color:red;
+       background-color:white;
+       border:red 1px solid;
+   }
 </style>
 }
 <body>
-      <nav class="navbar navbar-expand-lg navbar-light">
-            <img class="nav-bar-logo" src="~/css/images/logo.jpg" alt="">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <img class="nav-bar-logo" src="~/css/images/logo.jpg" alt="">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse nav-layout" id="navbarNavAltMarkup">
-        <div class="navbar-nav contact-flex ">
-            <div class="connect-icons">
-                <a class="nav-item nav-link" href="@Url.Action("Index","Cart")">CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                <a class="nav-item nav-link" href="@Url.Action("SignUp", "SignUp")">LOGIN <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            <div class="navbar-nav contact-flex ">
+                <div class="connect-icons">
+                    <a class="nav-item nav-link" href="@Url.Action("Index","Cart")">CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a class="nav-item nav-link" href="@Url.Action("SignUp", "SignUp")">LOGIN <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="navbar-nav navbar-menu">
+                <a class="nav-item nav-link active" href="#" id="nav-active-tab">HOME<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="#products">OUR PRODUCTS</a>
+                <a class="nav-item nav-link" href="#">SALE</a>
+                <a class="nav-item nav-link" href="#testimonials">TESTIMONIALS</a>
+                <a class="nav-item nav-link" href="#newsLetter">NEWSLETTER</a>
+                <a class="nav-item nav-link" href="#footer">ABOUT</a>
             </div>
         </div>
-        <div class="navbar-nav navbar-menu">
-        <a class="nav-item nav-link active" href="#" id="nav-active-tab">HOME<span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link " href="#products">OUR PRODUCTS</a>
-        <a class="nav-item nav-link" href="#">SALE</a>
-        <a class="nav-item nav-link" href="#testimonials">TESTIMONIALS</a>
-        <a class="nav-item nav-link" href="#newsLetter">NEWSLETTER</a>
-        <a class="nav-item nav-link" href="#footer">ABOUT</a>
+    </nav>
+    <div class="crtt">
+        <h1>Shopping Cart</h1>
+        <table class="table table-borderless">
+            <thead class="table-bordered">
+                <tr>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="img">
+                        <img src="~/css/images/bouqet0.jpg" alt=""  class="crt-img" />
+                    </td>
+                    <td class="sub-title">
+                        <h5 class="name">Rose Bouqet</h5>
+                        <h5 class="price-small">$125.99</h5>
+                    </td>
+                    <td>
+                    <h2 class="amount">3</h2>
+                    </td>
+                    <td class="mount2">
+                        <h5 class="subtotal">$377.97</h5>
+                    </td>
+                    <td>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                        <button class="remove-btn">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="img">
+                        <img src="~/css/images/bouqet1.jpg" alt=""  class="crt-img" />
+                    </td>
+                    <td class="sub-title">
+                        <h5 class="name">Lily Bouqet</h5>
+                        <h5 class="price-small">$100</h5>
+                    </td>
+                    <td>
+                    <h2 class="amount">3</h2>
+                    </td>
+                    <td class="mount2">
+                        <h5 class="subtotal">$300</h5>
+                    </td>
+                    <td>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                        <button class="remove-btn">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <div>
+       <div class="chckout1">
+            <button type="button" class="btn link-btn">continue shopping</button>
+       </div>
+        <div class="chckout">
+            <h4><span>Sub Total</span> <span>$377.97</span></h4>
+            <h4><span>Shipping Fee</span> <span>$5.34</span></h4>
+            <hr />
+            <h4><span>Order Total</span> <span>$383.31</span></h4>
+        </div>
+        <div class="link-container">
+            <button type="button" class="btn link-btn">Check Out</button>
+            <button type="button" class="btn link-btn">Clear Shopping Cart</button>
+        </div>
+     </div>
+    <div id="footer">
+        <partial name ="Footer"  />
+        @section cc{
+                <p class="cc">Florist Studio - Cart Page<br />© 2022 Iqra sarwar All rights reserved</p>
+        }
     </div>
-</nav>
-
-      <div class="crtt">
-          <div class="head">
-         <div class="content">
-            <h5>item</h5>
-            <h5>price</h5>
-            <h5>quantity</h5>
-            <h5>subtotal</h5>
-         </div>
-      <hr>
-      </div>
-      <div class="prdct-detil">
-         <div class="title">
-            <img src="~/css/images/bouqet0.jpg" alt="" class="crt-img">
-            <div class="sub-title">
-               <h5 class="name">Rose Bouqet</h5>
-               <p class="color">color :<span class="prd-clr">Red</span></p>
-               <h5 class="price-small">$125.99</h5>
-            </div>
-         </div>
-
-         <h5 class="price">$125.99</h5>
-
-         <div class="mount">
-            <button type="button" class="amount-btn">
-               <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-            <h2 class="amount">3</h2>
-            <button type="button" class="amount-btn">
-               <i class="fa fa-minus" aria-hidden="true"></i>
-            </button>
-         </div>
-         <div class="mount">
-            <h5 class="subtotal">$377.97</h5>
-            <button class="remove-btn">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </button>
-         </div>
-      </div>
-          <hr>
-          <div class="link-container">
-             <a class="link-btn" href="/products">continue shopping</a>
-             <button type="button" class="link-btn clear-btn">clear shopping cart</button>
-         </div>
-          <div>
-              <div class="chckout">
-             <h5>subtotal :<span>$377.97</span></h5>
-             <p>shipping fee :<span>$5.34</span></p>
-             <h4>order total :<span>$383.31</span></h4>
-             <button class="btn clear-btn">Check Out</button>
-             </div>
-             
-          </div>
-      </div>
-
-     <div id="footer">
-       <partial name ="Footer"  />
-       @section cc{
-               <p class="cc">Florist Studio - Cart Page<br />© 2022 Iqra sarwar All rights reserved</p>
-       }
-   </div>
 </body>
