@@ -1,0 +1,243 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+@section link
+{
+    <partial name="HeadLinks"/>
+   <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+   <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
+    <style>
+        h4
+        {
+            color:red;
+            padding:2%;
+            text-transform:capitalize;
+        }
+      .products_list
+      {
+         display: flex;
+         flex-direction: row;
+      }
+       .card-img-top
+       {
+          height: 355px;
+       }
+       .card{
+
+          border: 1px solid red;
+          margin: 1% auto;
+       }
+       .card-body
+       {
+          border-top: 1px solid red;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0.25rem;
+       }
+       .products h1{
+          color: red;
+          text-align: center;
+          margin: auto;
+          padding-top: 5%;
+          padding-bottom: 3%;
+       }
+       .products
+       {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       }
+       .product-btn{
+          margin: auto;
+          padding: 1% 3%;
+          margin-block: 3%;
+          border-radius: 5px;
+          min-width:fit-content;
+       }
+       .products_content{
+           padding-top:11%;
+       }
+       .products_content{
+           padding-left:5%;
+       }
+       .search-input{
+           border:1px inset red;
+           border-radius:5px;
+           padding:5px;
+       }
+       .color-btn{
+           border-radius:50%;
+           border:none;
+           padding:10px;
+       }
+       .all-btn{
+           border:none;
+           background-color:white;
+           padding-top:5px;
+       }
+       .ctog div
+       {
+           display:flex;
+           flex-direction:row;
+           justify-content:space-between;
+       }
+       .company
+       {
+           border:1px inset red;
+            border-radius:5px;
+       }
+    </style>
+}
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light">
+            <img class="nav-bar-logo" src="~/css/images/logo.jpg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-layout" id="navbarNavAltMarkup">
+        <div class="navbar-nav contact-flex ">
+            <div class="connect-icons">
+                <a class="nav-item nav-link" href="@Url.Action("Index","Cart")">CART <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <a class="nav-item nav-link" href="@Url.Action("SignUp", "SignUp")">LOGIN <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="navbar-nav navbar-menu">
+        <a class="nav-item nav-link active" href="#" id="nav-active-tab">HOME<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link " href="#products">OUR PRODUCTS</a>
+        <a class="nav-item nav-link" href="#">SALE</a>
+        <a class="nav-item nav-link" href="#testimonials">TESTIMONIALS</a>
+        <a class="nav-item nav-link" href="#newsLetter">NEWSLETTER</a>
+        <a class="nav-item nav-link" href="#footer">ABOUT</a>
+    </div>
+    </div>
+</nav>
+   <div class="products_list">
+      <div class="products_content">
+         <form>
+            <div class="">
+               <input type="text" name="text" placeholder="search" class="search-input" value=""></div>
+               <div class=" ">
+                  <h4>category</h4>
+                  <div class="ctog">
+                      <div>
+                            <label for="All">All</label>
+                            <input type="checkbox" name="All" id="All">
+                    </div>
+                    <div>
+                        <label for="Vase">Vase</label>
+                        <input type="checkbox" name="Vase" id="Vase">
+                    </div>
+                    <div>
+                        <label for="Fresh Flowers">Fresh Flowers</label>
+                        <input type="checkbox" name="Fresh Flowers" id="Fresh Flowers">
+                    </div>
+                    <div>
+                        <label for="Bouqets">Bouqets</label>
+                        <input type="checkbox" name="Bouqets" id="Bouqets">
+                    </div>
+                    <div>
+                        <label for="GiftBaskets">Gift Baskets</label>
+                        <input type="checkbox" name="GiftBaskets" id="GiftBaskets">
+                    </div>
+                    <div>
+                        <label for="Bear">Bear</label>
+                        <input type="checkbox" name="Bear" id="Bear">
+                      </div>
+                  </div>
+               </div>
+               <div class=" ">
+                  <h4>company</h4>
+                  <select name="company" class="company">
+                     <option value="all">all</option>
+                     <option value="marcos">marcos</option>
+                     <option value="liddy">liddy</option>
+                     <option value="ikea">ikea</option>
+                     <option value="caressa">caressa</option>
+                  </select>
+               </div>
+               <div class=" ">
+                  <h4>colors</h4>
+                  <div class="colors">
+                     <button name="color" data-color="all" class="all-btn">all</button>
+                     <button name="color" class="color-btn" data-color="#ff0000" style="background: rgb(255, 0, 0);"></button>
+                     <button name="color" class="color-btn" data-color="#00ff00" style="background: rgb(0, 255, 0);"></button>
+                     <button name="color" class="color-btn" data-color="#0000ff" style="background: rgb(0, 0, 255);"></button>
+                     <button name="color" class="color-btn" data-color="#000" style="background: rgb(0, 0, 0);"></button>
+                     <button name="color" class="color-btn" data-color="#ffb900" style="background: rgb(255, 185, 0);">
+                     </button>
+                  </div>
+               </div>
+               <div class=" ">
+                  <h4>price</h4>
+                  <p class="price">$2,619.90</p>
+                  <input type="range" name="price" min="0" max="309999" value="261990">
+               </div>
+               <div class="  shipping">
+                  <label for="shipping">free shipping</label>
+                  <input type="checkbox" name="shipping" id="shipping">
+               </div>
+               </form>
+               <button type="button" class="head-title-button product-btn clear-btn">clear filters</button>
+            </div>
+      <div class="products">
+         <h1>Our Products</h1>
+         <div class="row no-gutters">
+            <div class="card col-lg-3 col-sm-12">
+               <img class="card-img-top" src="~/css/images/bouqet2.jpg" alt="Card image cap">
+               <div class="card-body">
+               <h5 class="card-title">White Flower Bouqet</h5>
+               <p class="card-text">RS. 500</p>
+               <!-- <a href="#" class="btn btn-primary">Add To Cart</a> -->
+               </div>
+            </div>
+            <div class="card col-lg-3 col-sm-12">
+               <img class="card-img-top" src="~/css/images/bouqet0.jpg" alt="Card image cap">
+               <div class="card-body">
+               <h5 class="card-title">Red Flower Bouqet</h5>
+               <p class="card-text">RS. 500</p>
+               <!-- <a href="#" class="btn btn-primary">Add To Cart</a> -->
+               </div>
+            </div>
+            <div class="card col-lg-3 col-sm-12">
+               <img class="card-img-top" src="~/css/images/bouqet1.jpg" alt="Card image cap">
+               <div class="card-body">
+               <h5 class="card-title">Purple Flower Bouqet</h5>
+               <p class="card-text">RS. 500</p>
+               <!-- <a href="#" class="btn btn-primary">Add To Cart</a> -->
+               </div>
+            </div>
+         </div>
+         <div class="row no-gutters">
+            <div class="card col-lg-3 col-sm-12">
+               <img class="card-img-top" src="~/css/images/gift2.jpg" alt="Card image cap">
+               <div class="card-body">
+               <h5 class="card-title">Roses & Choclates Gift</h5>
+               <p class="card-text">RS. 500</p>
+               </div>
+            </div>
+            <div class="card col-lg-3 col-sm-12">
+               <img class="card-img-top" src="~/css/images/gift.jpg" alt="Card image cap">
+               <div class="card-body">
+               <h5 class="card-title">Pink Teddy Bear Gift</h5>
+               <p class="card-text">RS. 500</p>
+               </div>
+            </div>
+            <div class="card col-lg-3 col-sm-12">
+               <img class="card-img-top" src="~/css/images/gift1.jpg" alt="Card image cap">
+               <div class="card-body">
+               <h5 class="card-title">Roses & Teddy Bear Gift</h5>
+               <p class="card-text">RS. 500</p>
+               </div>
+            </div>
+         </div>
+         <button class="head-title-button product-btn">SEE MORE</button>
+      </div>
+    </div>
+     <div id="footer">
+       <partial name ="Footer"  />
+       @section cc{
+               <p class="cc">Florist Studio - Product Page<br />© 2022 Iqra sarwar All rights reserved</p>
+       }
+   </div>
+</body>

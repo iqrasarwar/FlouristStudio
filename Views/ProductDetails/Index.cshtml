@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model FlouristStudio.Models.Product
+@{
+    String[] LIST = { "RED", "BLUE" };
+    Product prd = new("P1", "PD", 1234, LIST, 5, 123);
+}
+
+<body>
+    <div>
+        <vc:product-desc prodcut-obj=@prd></vc:product-desc>
+    </div>
+</body>
