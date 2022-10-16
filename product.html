@@ -1,0 +1,72 @@
+<head>
+<style>
+   .head
+   {
+      color: red;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+   }
+   .content,.mount,.prdct-detil,.link-container{
+      display: flex;
+      flex-direction: row;
+   }
+   .sub-title{
+      display: flex;
+      flex-direction: column;
+   }
+   .chckout{
+      border: red 3px inset;
+      display: flex;
+      flex-direction: column;
+   }
+</style>
+</head>
+<body>
+      <div class="head">
+         <div class="content">
+            <h5>item</h5>
+            <h5>price</h5>
+            <h5>quantity</h5>
+            <h5>subtotal</h5>
+         </div>
+      <hr>
+      </div>
+      <div class="prdct-detil">
+         <div class="title">
+            <img src="" alt="">
+            <h5 class="name">Lilly Rose Bouqet</h5>
+            <div class="sub-title">
+               <p class="color">color :<span style="background: rgb(0, 0, 0);"></span></p>
+               <h5 class="price-small">$125.99</h5>
+            </div>
+         </div>
+
+         <h5 class="price">$125.99</h5>
+
+         <div class="mount">
+            <button type="button" class="amount-btn">
+               <!-- aDD BTN -->
+            </button>
+            <h2 class="amount">3</h2>
+            <button type="button" class="amount-btn">
+               <!-- DEC BTN -->
+            </button>
+         </div>
+         
+      </div>
+          <hr>
+          <div class="link-container">
+             <a class="link-btn" href="/products">continue shopping</a>
+             <button type="button" class="link-btn clear-btn">clear shopping cart</button>
+         </div>
+          <div class="chckout">
+             <h5>subtotal :<span>$377.97</span></h5>
+             <p>shipping fee :<span>$5.34</span></p>
+             <hr>
+             <h4>order total :<span>$383.31</span></h4>
+            <button class="btn"></button>
+         </div>
+
+
+</body>
